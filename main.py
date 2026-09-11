@@ -44,6 +44,10 @@ class ProcessadorImagens:
 
         return imagem_dilatada
 
+    def detectar_bordas(self, imagem):
+        imagem_bordas = cv2.Canny(imagem, 100, 200)
+        return imagem_bordas
+
     def carregar_imagens(self):
 
         for categoria in os.listdir(self.pasta_entrada):
@@ -83,11 +87,16 @@ class ProcessadorImagens:
                     imagem_threshold
                 )
 
+                imagem_bordas = self.detectar_bordas(
+                    imagem_morfologica
+                )
+
                 print(f"Imagem carregada: {caminho_imagem}")
                 print(f"Imagem em cinza: {imagem_cinza.shape}")
                 print(f"Ruído reduzido: {imagem_suavizada.shape}")
                 print(f"Threshold aplicado: {imagem_threshold.shape}")
                 print(f"Morfologia aplicada: {imagem_morfologica.shape}")
+                print(f"Bordas detectadas: {imagem_bordas.shape}")
 
 
 processador = ProcessadorImagens("raw_images")
