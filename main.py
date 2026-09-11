@@ -47,12 +47,28 @@ class ProcessadorImagens:
     def detectar_bordas(self, imagem):
         imagem_bordas = cv2.Canny(imagem, 100, 200)
         return imagem_bordas
+
     def redimensionar_imagem(self, imagem):
         imagem_redimensionada = cv2.resize(
             imagem,
             (256, 256)
         )
         return imagem_redimensionada
+
+    def salvar_imagem(self, imagem, categoria, nome_imagem):
+        pasta_saida = os.path.join(
+            "processed_images",
+            categoria
+        )
+
+        os.makedirs(pasta_saida, exist_ok=True)
+
+        caminho_saida = os.path.join(
+            pasta_saida,
+            nome_imagem
+        )
+
+        cv2.imwrite(caminho_saida, imagem)
 
     def carregar_imagens(self):
 
@@ -95,11 +111,22 @@ class ProcessadorImagens:
 
                 imagem_bordas = self.detectar_bordas(
                     imagem_morfologica
-                )                
+                )
+
                 imagem_redimensionada = self.redimensionar_imagem(
                     imagem_bordas
                 )
-            
+
+                self.salvar_imagem(
+                    imagem_redimensionada,
+                    categoria,
+                    nome_imagem
+                )
+
+                print(
+                    f"Imagem salva: "
+                    f"processed_images/{categoria}/{nome_imagem}"
+                )
 
                 print(f"Imagem carregada: {caminho_imagem}")
                 print(f"Imagem em cinza: {imagem_cinza.shape}")
@@ -107,7 +134,11 @@ class ProcessadorImagens:
                 print(f"Threshold aplicado: {imagem_threshold.shape}")
                 print(f"Morfologia aplicada: {imagem_morfologica.shape}")
                 print(f"Bordas detectadas: {imagem_bordas.shape}")
-                print(f"Imagem redimensionada: {imagem_redimensionada.shape}")
+                print(
+                    f"Imagem redimensionada: "
+                    f"{imagem_redimensionada.shape}"
+                )
+
 
 processador = ProcessadorImagens("raw_images")
 
