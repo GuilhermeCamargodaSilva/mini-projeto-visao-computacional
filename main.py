@@ -156,10 +156,7 @@ class ProcessadorImagens:
                 print(f"Threshold aplicado: {imagem_threshold.shape}")
                 print(f"Morfologia aplicada: {imagem_morfologica.shape}")
                 print(f"Bordas detectadas: {imagem_bordas.shape}")
-                print(
-                    f"Imagem redimensionada: "
-                    f"{imagem_redimensionada.shape}"
-                )
+                print( f"Imagem redimensionada: " f"{imagem_redimensionada.shape}")
 
 
 # Cria o processador apontando para a pasta das imagens originais
