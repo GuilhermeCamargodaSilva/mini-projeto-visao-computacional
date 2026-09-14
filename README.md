@@ -194,8 +194,7 @@ Download do dataset
 
 O dataset utilizado neste projeto pode ser obtido através do seguinte link:
 
-Download do Dataset - Google Drive
-
+**[Download do Dataset - Google Drive](https://drive.google.com/file/d/1K5gNxQ7RXA-nb4boNzPYQTJlRvJyYBD1/view?usp=sharing)**
 Após realizar o download e extrair os arquivos, organize as imagens da seguinte maneira:
 
 raw_images/
@@ -380,10 +379,7 @@ Avaliar métricas de desempenho do modelo.
 
 O vídeo de apresentação do projeto está disponível no Google Drive:
 
-[Assistir ao vídeo de apresentação - INSERIR LINK AQUI]
-
-Observação: substituir INSERIR LINK AQUI pelo link do vídeo após o upload no Google Drive e configurar o acesso como Leitor.
-
+**[Assistir ao vídeo de apresentação](https://drive.google.com/file/d/1uv8sF3bdVIZXOg-nxvO6WozwSX1NJ7OR/view?usp=sharing)**
  Autor
 
 Guilherme Camargo da Silva
